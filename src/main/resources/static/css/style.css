@@ -1,0 +1,154 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #000 !important;
+}
+
+.background-image {
+  object-fit: cover;
+  background-image: th:url("@{/photo-1540202404-d0c7fe46a087.avif}");
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  height: 100%; /* Full height of the viewport */
+  position: relative; /* Position the content relative to this container */
+  padding: 40px 0px;
+}
+
+.content {
+  position: absolute; /* Position the content absolutely within the container */
+  top: 50%; /* Align the content vertically */
+  left: 50%; /* Align the content horizontally */
+  transform: translate(-50%, -50%); /* Center the content both vertically and horizontally */
+  text-align: center;
+  color: rgb(224, 18, 18); /* Set the color of the content */
+}
+
+
+h1.heading {
+  text-align: center;
+  margin-top: 5px;
+  color: #000;
+  font-size: 33px;
+  margin-bottom: 20px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.search-container button {
+  padding-left: 9px;
+  padding-right: 14px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.search-container input {
+  padding: 10px;
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+div#createPopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 22px;
+  border: 1px solid black;
+}
+
+.popup button {
+  text-align: center;
+  margin-left: 89px;
+  margin-top: 25px;
+}
+
+.container {max-width: 1140px;margin:  0 auto;width: 100%;}
+.container input {
+  margin-bottom: 24px;
+  margin: 0px;
+  margin-top: 2px;
+  margin-bottom: 13px;
+}
+
+/* Style the text boxes */
+input[type="text"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 200px;
+  transition: transform 0.3s ease; /* Apply transition for smooth movement */
+  border-radius: 3px;
+  border-color: black;
+}
+/* Move the text boxes up when the class is added */
+.container.move-up input[type="text"] {
+  transform: translateY(-50px); /* Move up by 50px */
+}
+
+/* Move the text boxes down when the class is added */
+.container.move-down input[type="text"] {
+  transform: translateY(50px); /* Move down by 50px */
+}
+
+
+input[type="number"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  transition: transform 0.3s ease;
+  border-radius: 3px;
+  border-color: black; /* Apply transition for smooth movement */
+}
+input[type="text"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  transition: transform 0.3s ease;
+  border-radius: 3px;
+  border-color: black; /* Apply transition for smooth movement */
+}
+.text {
+    margin-top: 4px;
+    padding: 0px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+  border-color: black;
+}
+
+input[type="date"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+  transition: transform 0.3s ease;
+  border-radius: 3px;
+  border-color: black; /* Apply transition for smooth movement */
+}
+
+.selective {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 200px;
+    transition: transform 0.3s ease;
+    border-radius: 3px;
+    border-color: black; /* Apply transition for smooth movement */
+  
+}
+.search-container input {
+    max-width: 300px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></head>
+<body>
+<div class="background-image">
+    <div class="container">
+        <h1 class="heading">Enquiry Management System</h1>
+
+
+        <form th:action="@{'/enquiry/search'}" method="get">
+            <div class="search-container">
+                <input type="text" id="mobileNumber"  name="mobileNumber"  placeholder="Enter mobile number">
+                <button>Search</button>
+            </div>
+        </form>
+
+
+
+        <!-- Hidden popup for create option -->
+        <div id="createPopup" class="popup">
+            <p>Do you want to create a new entry for this mobile number?</p>
+            <button onclick="createEntry()">Create</button>
+            <button onclick="closePopup()">Cancel</button>
+        </div>
+        <form  th:action="@{/enquiry/create}" method="post" th:object="${enq}">
+            <div class="row mb-3">
+                <input type="hidden" th:field="*{id}" />
+                <div class="col-md-4 col-sm-6">
+                    Customer ID.:- <input type="text" th:field="*{customerId}" placeholder="000000" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Name:- <input type="text" th:field="*{customerName}"  id="name ">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Mobile No.:- <input type="text" th:field="*{mobileNumber}" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Age:- <input type="number" name="myAge" th:field="*{age}">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Gender:-
+                    <div class="text">
+                        Male <input type="radio" th:field="*{gender}" value="Male" name="myGender">
+                        Female <input type="radio" th:field="*{gender}" value="Female" name="myGender">
+                        Other <input type="radio" th:field="*{gender}" value="other" name="myGender">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Visiting Address:- <input type="text" th:field="*{address}"  />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Visit Date:- <input type="date" name="myDate" th:field="*{visitingDate}">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Lead State:-
+                    <select th:field="*{state}" class="selective">
+                        <option value="option1">Select Option</option>
+                        <option  value="Hot">Hot </option>
+                        <option   value="War">War</option>
+                        <option  value="Cold">Cold</option>
+                    </select>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    Rate :-
+                    <select th:field="*{rate}"  class="selective">
+                        <option value="option1">Select Option</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+            </div>
+            <h4>Document Not Available</h4>
+            <div class="checkbox1">
+                10th Marksheet:- <input th:field="*{documentSubmit}"  value="10th Marksheet" type="checkbox" name="myEligibility">
+                12th Marksheet:- <input th:field="*{documentSubmit}" value="12th Marksheet"  type="checkbox" name="myEligibility">
+                Graduation Marksheet:- <input type="checkbox" value="Graduation Marksheet" th:field="*{documentSubmit}"  name="myEligibility">
+                Post Graduation Marksheet:- <input type="checkbox" th:field="*{documentSubmit}" value="Post Graduation Marksheet"   name="myEligibility">
+            </div>
+            <div class="btn">
+                <input type="submit" value="Submit Now">
+                <!-- <input type="reset" value="Delete">
+                <input type="reset" value="Update"> -->
+            </div>
+        </form>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/javaScript/script.js}"></script>
+</body>
+
+</html>
